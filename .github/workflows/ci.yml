@@ -45,6 +45,7 @@ jobs:
 
       - name: Run tests
         run: |
+          export DISPLAY=":1"
           python -m pytest -v -s ./tests/
 
       - name: Linting
