@@ -43,9 +43,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      - name: Run tests
+      - name: Run tests on ubuntu using xvfb
+        if: startsWith(matrix.os, 'ubuntu')
         run: |
+          sudo apt-get install xvfb
+          sudo Xvfb :1 -screen 0 1024x768x24 </dev/null &
           export DISPLAY=":1"
+          python -m pytest -v -s ./tests/
+
+      - name: Run tests on windows/mac
+        # Matches the 'o' in 'windows' or 'macos'
+        if: contains(matrix.os, 'o')
+        run: |
           python -m pytest -v -s ./tests/
 
       - name: Linting
