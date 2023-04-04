@@ -1,0 +1,6 @@
+[run]
+omit = 
+        ./imshowtk/_version.py
+        ./imshowtk/__init__.py
+        ./imshowtk/__main__.py
+        ./imshowtk/ui/imshowtk_command_line.py
