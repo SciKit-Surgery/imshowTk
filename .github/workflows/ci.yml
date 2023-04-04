@@ -28,12 +28,6 @@ jobs:
           - python-ver: 3.11
             os: windows-latest
             experimental: true
-          - python-ver: 3.12-dev
-            os: ubuntu-latest
-            experimental: true
-          - python-ver: 3.12-dev
-            os: macos-latest
-            experimental: true
 
     runs-on: ${{ matrix.os }}
 
