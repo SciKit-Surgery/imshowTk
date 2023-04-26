@@ -14,12 +14,12 @@ setup(
     name='imshowTk',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description='A lightweight replacement for openCV's imshow using Tk',
+    description='A lightweight replacement for openCV imshow using Tk',
     long_description=long_description,
     long_description_content_type='text/x-rst',
     url='https://github.com/SciKit-Surgery/imshowTk',
     author='Stephen Thompson',
-    author_email='YOUR-EMAIL@ucl.ac.uk',
+    author_email='s.thompson@ucl.ac.uk',
     license='BSD-3 license',
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -54,8 +54,5 @@ setup(
     ],
 
     entry_points={
-        'console_scripts': [
-            'imshowtk=imshowtk.__main__:main',
-        ],
     },
 )
