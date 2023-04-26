@@ -50,13 +50,17 @@ jobs:
           sudo apt-get install xvfb
           sudo Xvfb :1 -screen 0 1024x768x24 </dev/null &
           export DISPLAY=":1"
-          python -m pytest -v -s ./tests/
+          coverage erase
+          coverage run -a --source ./imshowtk -m pytest -v -s ./tests/
+          coverage report -m
 
       - name: Run tests on windows/mac
         # Matches the 'o' in 'windows' or 'macos'
         if: contains(matrix.os, 'o')
         run: |
-          python -m pytest -v -s ./tests/
+          coverage erase
+          coverage run -a --source ./imshowtk -m pytest -v -s ./tests/
+          coverage report -m
 
       - name: Linting
         run: |
