@@ -6,7 +6,13 @@ from imshowtk.imshowtk import bitmap_to_photo
 
 def test_bitmap_to_photo():
     """bitmap_to_photo runs"""
-    window = Tk(None)
+    try:
+        window = Tk(None)
+    except RuntimeError:
+        #we're getting runtime errors on some macos CI.
+        #https://github.com/actions/setup-python/issues/649
+        assert False
+        return
     image = cv2.imread('project-icon.png')
     print (image.shape)
 
