@@ -1,6 +1,6 @@
 """A class to bring up a debugging window"""
 
-from tkinter import Tk, Canvas, NW, PhotoImage
+from tkinter import Tk, Canvas, NW, PhotoImage, TclError
 
 def rgb2hex(red,green,blue):
     """
@@ -88,9 +88,11 @@ class ImshowTk():
         if not self.initialised:
             self.setup_window(frame)
 
-        print(frame.shape)
         self.image = bitmap_to_photo(frame, self.subsample)
-        print(self.image.height())
-        print(self.image.width())
-        self.canvas.create_image(0, 0, anchor=NW, image=self.image)
+        try:
+            self.canvas.create_image(0, 0, anchor=NW, image=self.image)
+        except TclError as error_msg:
+            print ("Ignoring Tk error: ", str(error_msg))
+            return
+
         self.tk_window.update()
