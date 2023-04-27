@@ -7,18 +7,28 @@ imshowTk
    :target: https://github.com/SciKit-Surgery/imshowTk
    :alt: Logo
 
-.. image:: https://github.com/SciKit-Surgery/imshowTk/badges/master/build.svg
-   :target: https://github.com/SciKit-Surgery/imshowTk/pipelines
-   :alt: GitLab-CI test status
+.. image:: https://github.com/SciKit-Surgery/imshowTk/workflows/.github/workflows/ci.yml/badge.svg
+   :target: https://github.com/SciKit-Surgery/imshowTk/actions/
+   :alt: GitHub CI test status
 
-.. image:: https://github.com/SciKit-Surgery/imshowTk/badges/master/coverage.svg
-    :target: https://github.com/SciKit-Surgery/imshowTk/commits/master
+.. image:: https://coveralls.io/repos/github/SciKit-Surgery/imshowTk/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/SciKit-Surgery/imshowTk?branch=master
     :alt: Test coverage
 
 .. image:: https://readthedocs.org/projects/imshowTk/badge/?version=latest
     :target: http://imshowTk.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
+   :target: CODE_OF_CONDUCT.md
+
+.. image:: https://img.shields.io/badge/Cite-SciKit--Surgery-informational
+   :target: https://doi.org/10.1007/s11548-020-02180-5
+   :alt: The SciKit-Surgery paper
+
+.. image:: https://img.shields.io/twitter/follow/scikit_surgery?style=social
+   :target: https://twitter.com/scikit_surgery?ref_src=twsrc%5Etfw
+   :alt: Follow scikit_surgery on twitter
 
 
 Author: Stephen Thompson

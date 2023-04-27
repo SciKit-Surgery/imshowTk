@@ -66,6 +66,10 @@ jobs:
         run: |
           pylint --rcfile=tests/pylintrc imshowtk tests
 
+      - name: Run coveralls
+        run: |
+          pip install coveralls pyyaml
+          coveralls
 
   deploy:
     runs-on: ubuntu-latest
