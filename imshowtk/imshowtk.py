@@ -18,7 +18,7 @@ def bitmap_to_photo(bitmap, subsample = 1):
 
     :param bitmap: The bitmap image, taken from opencv as a
         3 channel numpy array
-    :param subsample: You can optionally subsample the image 
+    :param subsample: You can optionally subsample the image
         which might be useful if you want it to run faster. A value of
         n will give an nxn speed up as we use 2 loops to convert the image.
     """
@@ -40,7 +40,7 @@ def bitmap_to_photo(bitmap, subsample = 1):
 
 class ImshowTk():
     """
-    Creates a window using TkInter, into which we can 
+    Creates a window using TkInter, into which we can
     place an opencv image. Conceived as a zero dependency alternative
     to opencv's imshow window, for when we want to use opencv-headless
     or avoid conflict with Qt.
@@ -92,6 +92,10 @@ class ImshowTk():
         try:
             self.canvas.create_image(0, 0, anchor=NW, image=self.image)
         except TclError as error_msg:
+            #this seems to happen when we're not running inside
+            #a persistent application (i.e. CI testing),
+            #self.image is getting deleted before we can use it.
+            #We haven't seen it in practice.
             print ("Ignoring Tk error: ", str(error_msg))
             return
 
