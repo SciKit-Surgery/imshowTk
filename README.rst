@@ -7,6 +7,9 @@ imshowTk
    :target: https://github.com/SciKit-Surgery/imshowTk
    :alt: Logo
 
+|
+
+
 .. image:: https://github.com/SciKit-Surgery/imshowTk/workflows/.github/workflows/ci.yml/badge.svg
    :target: https://github.com/SciKit-Surgery/imshowTk/actions/
    :alt: GitHub CI test status
@@ -33,11 +36,19 @@ imshowTk
 
 Author: Stephen Thompson
 
+imshowTk is a zero dependency alternative to opencv's imshow function. It was developed to allow us to show an image window when using opencv-headless and don't want to use a larger UI library. It uses tkinter which comes as standard in most Python installations.
+
 imshowTk is part of the `SciKit-Surgery`_ software project, developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
 
-imshowTk is a zero dependency alternative to opencv's imshow function. It was developed to allow an image window when using opencv-headless. 
+Basic use case
+::
 
-Please explore the project structure, and implement your own functionality.
+    from from imshowtk.imshowtk import ImshowTk
+    imshow = ImshowTk()
+    frame = cv2.imread('project-icon.png')
+    imshow.imshow(frame)
+    del imshow
+
 
 Developing
 ----------
